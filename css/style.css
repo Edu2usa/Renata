@@ -205,7 +205,54 @@ input, select, textarea, button { font-family: inherit; }
   background: rgba(26,71,49,0.08);
 }
 
-.nav__cta { margin-left: 8px; font-size: 0.88rem; padding: 10px 20px; }
+/* Nav logo */
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+}
+.nav__logo-mark {
+  font-size: 1rem;
+  color: #c9a030;
+  line-height: 1;
+}
+.nav__logo-text em {
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+}
+.header.scrolled .nav__logo { color: var(--color-text); }
+.header.scrolled .nav__logo-text em { color: var(--color-primary-light); }
+
+/* Nav phone CTA — white on dark hero, green on white header */
+.nav__cta {
+  margin-left: 8px;
+  font-size: 0.88rem;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.92);
+  color: var(--color-primary);
+  border-color: white;
+  font-weight: 700;
+}
+.nav__cta:hover {
+  background: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+.header.scrolled .nav__cta {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+.header.scrolled .nav__cta:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
 
 .nav__hamburger {
   display: none;
@@ -517,20 +564,11 @@ input, select, textarea, button { font-family: inherit; }
 .about__image-placeholder {
   color: var(--color-white);
 }
-.about__monogram {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.12);
-  border: 3px solid rgba(255,255,255,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-serif);
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--color-white);
+.about__logo-img {
+  width: 200px;
+  height: auto;
   margin: 0 auto 20px;
+  display: block;
 }
 .about__image-placeholder p {
   font-family: var(--font-serif);
@@ -648,6 +686,21 @@ input, select, textarea, button { font-family: inherit; }
   font-weight: 600;
   text-decoration: underline;
 }
+
+.areas__more {
+  text-align: center;
+  margin-top: 48px;
+  padding: 24px 32px;
+  background: rgba(26,71,49,0.06);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(26,71,49,0.12);
+}
+.areas__more p {
+  font-size: 0.97rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+.areas__more p + p { margin-top: 8px; }
 
 /* ============================================
    PROCESS
@@ -923,8 +976,15 @@ a.contact-detail span { color: var(--color-primary-light); font-weight: 600; }
   padding-bottom: 48px;
 }
 
-.footer__logo { margin-bottom: 16px; }
-.footer__logo .nav__logo-text { color: var(--color-white); }
+.footer__logo {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.footer__logo-img {
+  height: 130px;
+  width: auto;
+  /* SVG is gold on transparent — looks great on dark footer */
+}
 
 .footer__tagline {
   font-size: 0.88rem;

@@ -60,26 +60,25 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 // ---- Fade-up animation on scroll ----
 const fadeEls = document.querySelectorAll(
-  '.service-card, .area-card, .testimonial-card, .process-step, .value-item, .contact-detail'
+  '.service-card, .area-card, .testimonial-card, .process-step, .value-item, .contact-detail, .section-header, .about__content, .about__image-wrap, .contact__info'
 );
 
-fadeEls.forEach(el => el.classList.add('fade-up'));
-
 const observer = new IntersectionObserver(entries => {
-  entries.forEach((entry, i) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+}, { threshold: 0 });
 
-fadeEls.forEach(el => observer.observe(el));
-
-// ---- Section fade on scroll (headers) ----
-document.querySelectorAll('.section-header, .about__content, .about__image-wrap, .contact__info').forEach(el => {
-  el.classList.add('fade-up');
-  observer.observe(el);
+fadeEls.forEach(el => {
+  // Only animate if element is below the fold; otherwise show immediately
+  const rect = el.getBoundingClientRect();
+  if (rect.top >= window.innerHeight) {
+    el.classList.add('fade-up');
+    observer.observe(el);
+  }
 });
 
 // ---- Contact Form ----

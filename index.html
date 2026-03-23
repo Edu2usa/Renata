@@ -16,7 +16,7 @@
   <header class="header" id="header">
     <nav class="nav container">
       <a href="#home" class="nav__logo">
-        <span class="nav__logo-icon">✦</span>
+        <span class="nav__logo-mark">✦</span>
         <span class="nav__logo-text">Renata's <em>Cleaning</em></span>
       </a>
 
@@ -28,7 +28,7 @@
         <li><a href="#contact" class="nav__link">Contact</a></li>
       </ul>
 
-      <a href="tel:2039425529" class="btn btn--outline nav__cta">
+      <a href="tel:2039425529" class="btn nav__cta">
         <span>📞</span> 203-942-5529
       </a>
 
@@ -62,8 +62,8 @@
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
-          <span class="stat__number">5</span>
-          <span class="stat__label">Towns Served</span>
+          <span class="stat__number">CT</span>
+          <span class="stat__label">Fairfield County</span>
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
@@ -115,7 +115,8 @@
 
       <div class="services__grid">
 
-        <div class="service-card">
+        <div class="service-card service-card--featured">
+          <div class="service-card__badge">Most Popular</div>
           <div class="service-card__icon">🏡</div>
           <h3 class="service-card__title">Regular House Cleaning</h3>
           <p class="service-card__desc">Weekly, bi-weekly, or monthly cleaning to keep your home consistently fresh and tidy. Perfect for busy families.</p>
@@ -127,8 +128,7 @@
           </ul>
         </div>
 
-        <div class="service-card service-card--featured">
-          <div class="service-card__badge">Most Popular</div>
+        <div class="service-card">
           <div class="service-card__icon">✨</div>
           <h3 class="service-card__title">Deep Cleaning</h3>
           <p class="service-card__desc">A thorough, top-to-bottom cleaning that reaches every corner. Ideal for first-time clients or seasonal refreshes.</p>
@@ -149,18 +149,6 @@
             <li>Inside all cabinets & drawers</li>
             <li>Appliances cleaned inside & out</li>
             <li>Ready for new occupants</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card__icon">🏢</div>
-          <h3 class="service-card__title">Office Cleaning</h3>
-          <p class="service-card__desc">Keep your workspace professional and hygienic. A clean office boosts productivity and leaves a great impression.</p>
-          <ul class="service-card__list">
-            <li>Workstations & common areas</li>
-            <li>Restroom sanitation</li>
-            <li>Kitchen/break room cleaning</li>
-            <li>Scheduled after-hours service</li>
           </ul>
         </div>
 
@@ -202,7 +190,7 @@
       <div class="about__image-wrap">
         <div class="about__image-card">
           <div class="about__image-placeholder">
-            <div class="about__monogram">RO</div>
+            <img src="images/logo.jpg" alt="Renata's Cleaning" class="about__logo-img" />
             <p>Renata Oliveira</p>
             <span>Owner &amp; Founder</span>
           </div>
@@ -256,7 +244,7 @@
       <div class="section-header">
         <span class="section-tag">Where We Clean</span>
         <h2 class="section-title">Proudly Serving<br /><em>Fairfield County</em></h2>
-        <p class="section-subtitle">We provide professional cleaning services throughout the greater Danbury area.</p>
+        <p class="section-subtitle">Based in Danbury, CT, we travel throughout Fairfield County and beyond. These are just a few of the communities we love serving — don't see yours? Just ask!</p>
       </div>
 
       <div class="areas__grid">
@@ -268,7 +256,7 @@
         <div class="area-card">
           <div class="area-card__icon">📍</div>
           <h3>Bethel</h3>
-          <p>Reliable cleaning for Bethel homes and businesses.</p>
+          <p>Reliable cleaning for Bethel homes and families.</p>
         </div>
         <div class="area-card">
           <div class="area-card__icon">📍</div>
@@ -278,7 +266,7 @@
         <div class="area-card">
           <div class="area-card__icon">📍</div>
           <h3>Monroe</h3>
-          <p>Trusted service for Monroe families and offices.</p>
+          <p>Trusted service for Monroe families throughout the town.</p>
         </div>
         <div class="area-card">
           <div class="area-card__icon">📍</div>
@@ -287,7 +275,10 @@
         </div>
       </div>
 
-      <p class="areas__note">Not sure if we serve your area? <a href="tel:2039425529">Give us a call</a> — we're happy to help!</p>
+      <div class="areas__more">
+        <p>We also serve <strong>Brookfield, New Milford, Sherman, Redding, Wilton, Weston, Westport</strong> and many other Fairfield County communities.</p>
+        <p class="areas__note">Not on the list? <a href="tel:2039425529">Call us</a> — we likely cover your area too!</p>
+      </div>
     </div>
   </section>
 
@@ -452,7 +443,7 @@
             <span class="contact-detail__icon">🌎</span>
             <div>
               <strong>Service Area</strong>
-              <span>Danbury, Bethel, Ridgefield,<br />Monroe, Newtown</span>
+              <span>Fairfield County & surrounding<br />communities — call to confirm</span>
             </div>
           </div>
         </div>
@@ -490,7 +481,6 @@
               <option value="regular">Regular House Cleaning</option>
               <option value="deep">Deep Cleaning</option>
               <option value="movein">Move In / Move Out</option>
-              <option value="office">Office Cleaning</option>
               <option value="postconstruction">Post-Construction</option>
               <option value="event">Event Cleaning</option>
             </select>
@@ -526,9 +516,8 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a href="#home" class="nav__logo footer__logo">
-          <span class="nav__logo-icon">✦</span>
-          <span class="nav__logo-text">Renata's <em>Cleaning</em></span>
+        <a href="#home" class="footer__logo">
+          <img src="images/logo.jpg" alt="Renata's Cleaning" class="footer__logo-img" />
         </a>
         <p class="footer__tagline">Professional cleaning services in Danbury, CT and surrounding communities. Over 20 years of trusted, personal service.</p>
         <a href="tel:2039425529" class="btn btn--primary footer__phone">📞 (203) 942-5529</a>
@@ -540,7 +529,6 @@
           <li><a href="#services">Regular Cleaning</a></li>
           <li><a href="#services">Deep Cleaning</a></li>
           <li><a href="#services">Move In / Move Out</a></li>
-          <li><a href="#services">Office Cleaning</a></li>
           <li><a href="#services">Post-Construction</a></li>
           <li><a href="#services">Event Cleaning</a></li>
         </ul>
@@ -554,6 +542,7 @@
           <li><a href="#areas">Ridgefield, CT</a></li>
           <li><a href="#areas">Monroe, CT</a></li>
           <li><a href="#areas">Newtown, CT</a></li>
+          <li><a href="#areas">Brookfield &amp; more</a></li>
         </ul>
       </div>
 
