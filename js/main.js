@@ -84,7 +84,10 @@ fadeEls.forEach(el => {
 // ---- Contact Form ----
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', e => {
+// Replace YOUR_FORM_ID with the ID from your Formspree dashboard
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqyvqoo';
+
+contactForm.addEventListener('submit', async e => {
   e.preventDefault();
 
   // Simple validation
@@ -104,18 +107,31 @@ contactForm.addEventListener('submit', e => {
     return;
   }
 
-  // Simulate form submission
   const submitBtn = contactForm.querySelector('[type="submit"]');
   const origText = submitBtn.textContent;
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending...';
 
-  setTimeout(() => {
-    submitBtn.disabled = false;
-    submitBtn.textContent = origText;
-    contactForm.reset();
-    showToast('✅ Thanks! Renata will contact you within 24 hours.');
-  }, 1200);
+  try {
+    const data = new FormData(contactForm);
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      contactForm.reset();
+      showToast('✅ Thanks! Renata will contact you within 24 hours.');
+    } else {
+      showToast('❌ Something went wrong. Please call (203) 942-5529.', '#c0392b');
+    }
+  } catch {
+    showToast('❌ Something went wrong. Please call (203) 942-5529.', '#c0392b');
+  }
+
+  submitBtn.disabled = false;
+  submitBtn.textContent = origText;
 });
 
 function showToast(message, bg = 'var(--color-primary-dark)') {
