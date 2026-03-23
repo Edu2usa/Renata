@@ -205,7 +205,42 @@ input, select, textarea, button { font-family: inherit; }
   background: rgba(26,71,49,0.08);
 }
 
-.nav__cta { margin-left: 8px; font-size: 0.88rem; padding: 10px 20px; }
+/* Nav logo image */
+.nav__logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1); /* white on dark hero */
+  transition: filter var(--transition);
+}
+.header.scrolled .nav__logo-img {
+  filter: none; /* gold on white header */
+}
+
+/* Nav phone CTA — white on dark hero, green on white header */
+.nav__cta {
+  margin-left: 8px;
+  font-size: 0.88rem;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.92);
+  color: var(--color-primary);
+  border-color: white;
+  font-weight: 700;
+}
+.nav__cta:hover {
+  background: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+.header.scrolled .nav__cta {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+.header.scrolled .nav__cta:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
 
 .nav__hamburger {
   display: none;
@@ -649,6 +684,21 @@ input, select, textarea, button { font-family: inherit; }
   text-decoration: underline;
 }
 
+.areas__more {
+  text-align: center;
+  margin-top: 48px;
+  padding: 24px 32px;
+  background: rgba(26,71,49,0.06);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(26,71,49,0.12);
+}
+.areas__more p {
+  font-size: 0.97rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+.areas__more p + p { margin-top: 8px; }
+
 /* ============================================
    PROCESS
    ============================================ */
@@ -923,8 +973,12 @@ a.contact-detail span { color: var(--color-primary-light); font-weight: 600; }
   padding-bottom: 48px;
 }
 
-.footer__logo { margin-bottom: 16px; }
-.footer__logo .nav__logo-text { color: var(--color-white); }
+.footer__logo { margin-bottom: 16px; display: inline-block; }
+.footer__logo-img {
+  height: 90px;
+  width: auto;
+  filter: brightness(0) invert(1); /* white version on dark footer */
+}
 
 .footer__tagline {
   font-size: 0.88rem;
