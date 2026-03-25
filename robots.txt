@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://renatascleaningct.com/sitemap.xml
