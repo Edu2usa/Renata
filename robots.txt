@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://renatascleaningct.com/sitemap.xml
+Sitemap: https://renatashousecleaning.com/sitemap.xml
