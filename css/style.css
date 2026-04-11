@@ -450,7 +450,7 @@ input, select, textarea, button { font-family: inherit; }
 
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -1090,7 +1090,6 @@ a.contact-detail span { color: var(--color-primary-light); font-weight: 600; }
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
-  .services__grid { grid-template-columns: repeat(2, 1fr); }
   .areas__grid { grid-template-columns: repeat(3, 1fr); }
   .footer__inner { grid-template-columns: 1fr 1fr; gap: 36px; }
   .about__inner { gap: 48px; }
